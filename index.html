@@ -1,104 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rakha Pradana</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Rakha Pradana - Front-End Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00bcd4',
+                        dark: '#121212',
+                        light: '#e0e0e0',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        @keyframes scroll_x {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animate-scroll-x {
+            animation: scroll_x 15s linear infinite;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+
 </head>
 
-<body>
-    <header>
-        <h1>RAKHA PRADANA SUSILO PUTRA</h1>
-        <p>Junior Front-End Developer | Lulusan Informatika | Terbiasa Membangun Website Responsive</p>
+<body class="bg-dark text-light font-sans tracking-wide">
+    <!-- Header -->
+    <header class="bg-gray-900 py-16 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+            Rakha Pradana Susilo Putra
+        </h1>
+        <p class="text-gray-400 text-lg">Junior Front-End Developer | Informatics Graduate | Responsive Website
+            Enthusiast</p>
     </header>
 
-    <section class="section" id="about">
-        <h2>Tentang Saya</h2>
-        <img src="images/fotodiri2.JPG" alt="Foto Rakha Pradana" class="profile-photo">
-        <p>Saya adalah seorang Junior Web Developer yang sedang aktif belajar dan mengembangkan keterampilan di bidang
-            web development.
-            Meskipun masih baru, saya telah menyelesaikan beberapa proyek sederhana untuk melatih kemampuan dalam HTML,
-            CSS, dan JavaScript.
-            Saya memiliki semangat tinggi untuk terus berkembang dan berkontribusi di dunia teknologi.</p>
+    <!-- About -->
+    <section id="about" class="py-16 px-6 text-center">
+        <h2 class="text-3xl text-primary font-semibold mb-6">Tentang Saya</h2>
+        <img src="images/fotodiri2.JPG" alt="Foto Rakha"
+            class="w-40 h-40 object-cover object-top rounded-full border-4 border-primary mx-auto mb-6 shadow-lg" />
+        <p class="max-w-xl mx-auto text-gray-300 leading-relaxed">
+            Saya adalah Junior Web Developer yang tengah aktif memperdalam teknologi front-end. Saya telah membangun
+            berbagai proyek kecil untuk mengasah kemampuan HTML, CSS, dan JavaScript. Saya juga tengah mengeksplorasi
+            framework modern seperti React.js. Tujuan saya adalah terus belajar dan menciptakan solusi digital yang
+            berdampak.
+        </p>
     </section>
 
-    <section class="section" id="skills">
-        <h2>Keterampilan</h2>
-        <ul class="skills-list">
-            <li>✔️ HTML5, CSS, JavaScript</li>
-            <li>✔️ Responsive Web Design</li>
-            <li>✔️ Git & GitHub</li>
-            <li>✔️ Sedang Mendalami: React.js</li>
-        </ul>
-    </section>
+    <section id="skills" class="py-8 bg-gray-900 text-center">
+        <h2 class="text-3xl text-primary font-semibold mb-10">Keterampilan Teknis</h2>
 
-    <section class="section" id="project">
-        <h2>Proyek Yang Pernah Saya Kerjakan</h2>
-        <div class="project-container">
+        <!-- Wrapper bergaya scroll horizontal dengan gradasi samping -->
+        <div
+            class="relative overflow-x-auto no-scrollbar my-8
+              before:content-[''] before:block before:w-20 before:h-full before:bg-gradient-to-r before:from-gray-900 before:via-transparent before:absolute before:left-0 before:top-0 before:z-10
+              after:content-[''] after:block after:w-20 after:h-full after:bg-gradient-to-l after:from-gray-900 after:via-transparent after:absolute after:right-0 after:top-0 after:z-10">
 
-            <div class="card">
-                <h3>Inventory DISKOMINFO</h3>
-                <p>Saya terlibat dalam pengembangan aplikasi Inventory Barang untuk kebutuhan internal Diskominfo.
-                    Aplikasi ini dibangun menggunakan Laravel 8 karena keunggulannya dalam arsitektur MVC dan
-                    pengelolaan database.</p>
-                <h4>Fitur Utama</h4>
-                <ul>
-                    <li>CRUD: Data barang, kategori, lokasi penyimpanan, dan peminjaman.</li>
-                    <li>Integrasi QR Code menggunakan library simple-qrcode.</li>
-                    <li>User Roles & Authentication Laravel bawaan.</li>
-                </ul>
-            </div>
+            <div class="whitespace-nowrap inline-block animate-scroll-x space-x-4 px-6">
 
-            <div class="card">
-                <h3>Sistem Informasi Manajemen Rumah Sakit (SIMRS)</h3>
-                <p>Saya terlibat dalam pengembangan SIMRS sebagai front-end developer menggunakan Next.js. Fokus pada
-                    manajemen data pasien dan pengiriman SEP ke BPJS.</p>
-                <h4>Kontribusi</h4>
-                <ul>
-                    <li>Perancangan UI/UX input data pasien.</li>
-                    <li>Integrasi API layanan kesehatan.</li>
-                    <li>Validasi data sebelum pengiriman SEP.</li>
-                </ul>
-                <p>Proyek ini dilanjutkan oleh backend menggunakan Laravel 11.</p>
-            </div>
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"
+                        class="w-8 h-8" />
+                    HTML5
+                </span>
 
-            <div class="card">
-                <h3>Integrasi SATUSEHAT</h3>
-                <p>Saya terlibat dalam pengembangan integrasi SATUSEHAT menggunakan PHP Native untuk proses pertukaran
-                    data layanan kesehatan standar nasional Kemenkes.</p>
-                <h4>Kontribusi</h4>
-                <ul>
-                    <li>Implementasi modul pertukaran data FHIR.</li>
-                    <li>Autentikasi API & enkripsi data pasien.</li>
-                    <li>Testing koneksi API SATUSEHAT.</li>
-                </ul>
-            </div>
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"
+                        class="w-8 h-8" />
+                    CSS3
+                </span>
 
-            <div class="card">
-                <h3>Jurnal Klasifikasi Daun Herbal - JITK Sinta 2</h3>
-                <p>Sebagai tugas akhir ekuivalensi pengganti skripsi, saya mempublikasikan jurnal terkait klasifikasi
-                    jenis daun herbal menggunakan Deep Learning di JITK SINTA 2.</p>
-                <h4>Teknologi & Metode</h4>
-                <ul>
-                    <li>Model: EfficientNetV2B0.</li>
-                    <li>Preprocessing, augmentasi, dan normalisasi data.</li>
-                    <li>Implementasi: Python, TensorFlow, Keras.</li>
-                    <li>Evaluasi: Confusion Matrix, Akurasi, Presisi, Recall, F1-Score.</li>
-                </ul>
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JavaScript" class="w-8 h-8" />
+                    JavaScript (ES6+)
+                </span>
+
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg"
+                        alt="Tailwind CSS" class="w-8 h-8" />
+                    Tailwind CSS
+                </span>
+
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                        alt="Next.js" class="w-8 h-8" />
+                    Next.js
+                </span>
+
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+                        alt="Laravel" class="w-8 h-8" />
+                    Laravel
+                </span>
+
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"
+                        class="w-8 h-8" />
+                    Git & GitHub
+                </span>
+
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"
+                        class="w-8 h-8" />
+                    Linux CLI
+                </span>
+
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
+                        class="w-8 h-8" />
+                    MySQL
+                </span>
+
+                <span class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-4 rounded-full shadow-md">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"
+                        class="w-8 h-8" />
+                    Python
+                </span>
+
             </div>
         </div>
     </section>
-    <section class="section" id="contact">
-        <h2>Contact</h2>
-        <p>Email: rakhapradana97@gmail.com</p>
-        <p>Whatsapp: +62 811-5047-448</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/rakha-pradana/"
-                target="_blank">https://www.linkedin.com/in/rakha-pradana/</a></p>
+
+    <section id="project" class="py-16 px-6 text-center">
+        <h2 class="text-3xl text-primary font-semibold mb-10">Proyek Saya</h2>
+        <div class="flex flex-wrap justify-center gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-gray-800 rounded-xl shadow-md p-6 w-80 text-left hover:scale-105 transition duration-300">
+                <h3 class="text-xl text-primary font-semibold mb-2">Inventory DISKOMINFO</h3>
+                <p class="text-gray-300 mb-3 text-sm">Aplikasi manajemen barang internal dengan Laravel 8 dan QR code.
+                </p>
+                <ul class="list-disc list-inside text-gray-400 text-sm space-y-1">
+                    <li>CRUD Barang & Lokasi</li>
+                    <li>QR Code Integration</li>
+                    <li>Role & Auth</li>
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-gray-800 rounded-xl shadow-md p-6 w-80 text-left hover:scale-105 transition duration-300">
+                <h3 class="text-xl text-primary font-semibold mb-2">SIMRS</h3>
+                <p class="text-gray-300 mb-3 text-sm">Sistem Manajemen Rumah Sakit dengan Next.js dan Laravel 11.</p>
+                <ul class="list-disc list-inside text-gray-400 text-sm space-y-1">
+                    <li>UI/UX Input Pasien</li>
+                    <li>Integrasi API BPJS</li>
+                    <li>Validasi SEP</li>
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-gray-800 rounded-xl shadow-md p-6 w-80 text-left hover:scale-105 transition duration-300">
+                <h3 class="text-xl text-primary font-semibold mb-2">Integrasi SATUSEHAT</h3>
+                <p class="text-gray-300 mb-3 text-sm">PHP Native untuk pertukaran data FHIR standar Kemenkes.</p>
+                <ul class="list-disc list-inside text-gray-400 text-sm space-y-1">
+                    <li>Modul FHIR</li>
+                    <li>Autentikasi & Enkripsi</li>
+                    <li>API Testing</li>
+                </ul>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-gray-800 rounded-xl shadow-md p-6 w-80 text-left hover:scale-105 transition duration-300">
+                <h3 class="text-xl text-primary font-semibold mb-2">Jurnal Deep Learning</h3>
+                <p class="text-gray-300 mb-3 text-sm">Klasifikasi daun herbal dengan EfficientNetV2B0 – JITK SINTA 2.
+                </p>
+                <ul class="list-disc list-inside text-gray-400 text-sm space-y-1">
+                    <li>TensorFlow, Keras</li>
+                    <li>Evaluasi: F1-Score</li>
+                    <li>Data Augmentasi</li>
+                </ul>
+            </div>
+
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2025 Rakha Pradana Susilo Putra</p>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-gray-900 text-center">
+        <h2 class="text-3xl text-primary font-semibold mb-6">Hubungi Saya</h2>
+        <p>Email: <a href="mailto:rakhapradana97@gmail.com"
+                class="text-primary hover:underline">rakhapradana97@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/628115047448" class="text-primary hover:underline">+62 811-5047-448</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/rakha-pradana/" target="_blank"
+                class="text-primary hover:underline">Rakha Pradana</a></p>
+    </section>
+
+    <footer class="bg-gray-800 text-center text-gray-400 py-6">
+        &copy; 2025 Rakha Pradana Susilo Putra.
     </footer>
 </body>
 
